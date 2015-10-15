@@ -1,0 +1,66 @@
+{%extends "base.html"%}
+{% load bootstrap3 %}
+{% block 'content' %}
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>
+                  Registration form
+                </h1>
+                <form action="/url/to/submit/" method="post" class="form">
+                  {% csrf_token %}
+                  {% bootstrap_form form %}
+                  {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                      {% bootstrap_icon "star" %} Submit
+                    </button>
+                  {% endbuttons %}
+                </form>
+            </div>
+            <div class="col-lg-4">
+            <dl>
+            <dt> STEP1: REGISTER FOR THE ECS3 </dt>
+            <dd> Access the Registration form. Please enter all information as requested in Registration form. Potential students, as part of their application, should upload an abstract which will be presented in the form of poster as PDF file.</dd>
+
+            <dt>STEP 2. CONFORMATION OF REGISTRATION FOR THE ECS3 </dt>
+            <dd>
+            Upon registration, you will receive an automatic confirmation message by e-mail; amongst other information, it contains your reference code—please keep it for future use.
+            </dd>
+
+            <dt>
+                        STEP 3. ACCEPTANCE OF ABSTRACT FOR THE ECS3
+            </dt>
+            <dd>
+                        We will evaluate your submission and after your abstract has been accepted you will receive e-mail message with information about how to proceed with payment of the registration fee.
+            </dd>
+
+            <dt>
+                        STEP 4. PAYMENT OF REGISTRATION FOR THE ECS3
+            </dt>
+            <dd>
+                        Please pay registration fee. If your payment has not been received unit May 15 you will additionally be charged for late registration fee. 
+            </dd>
+
+            <dt>
+                        STEP 5. CONFORMATION OF ATTENDANCE TO THE ECS3
+            </dt>
+            <dd>
+                        Your attendance to ECS3 will be finally confirmed in a e-mail message after your registration fee has been received. In order to speed up the procedure you may send a copy of the bank transfer by e-mail to jpopovic@irb.hr 
+            </dd>
+
+            <dt>
+                        STEP 6. PAYMENT OF THE ACCOMMODATION FOR THE ECS3
+            </dt>
+            <dd>
+                        Soon after the conformation of attendance you will receive additional e-mail with the invoice for payment of the accommodation option you have chosen in Registration form. Payment information will be included. Please pay accommodation accordingly. 
+            </dd>
+
+            <dt>
+                        STEP 7. SEE YOU IN BOL FOR ECS3
+            </dt>
+            <dd>
+                        Before processing your registration you are kindly invited to read the information about registration fees. Bursaries provided by IUCr will be available to cover partially or totally the travel and subsistence expenses. For more information visit bursary paragraph.
+            </dd>
+            </dl>
+            </div>
+        </div>
+{% endblock %}
