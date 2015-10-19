@@ -31,11 +31,11 @@ class Registration(models.Model):
     name = models.CharField(max_length=50, verbose_name="Name")
     surname = models.CharField(max_length=50, verbose_name="Surname")
     email = models.EmailField(max_length=50)
-    date_of_birth = models.DateField(verbose_name="Date of birth", help_text="Format dd-mm-yyyy")
-    affiliation = models.TextField(verbose_name="Affiliation")
-    address = models.TextField()
+    date_of_birth = models.DateField(verbose_name="Date of birth", help_text="Format yyyy-mm-dd")
+    affiliation = models.CharField(max_length=200,verbose_name="Affiliation")
+    address = models.CharField(max_length=100)
 
-    module = models.IntegerField(choices=MODULECHOICES, default=1)
+    module = models.IntegerField(choices=MODULECHOICES)
     status = models.IntegerField(choices=STATUSCHOICES, verbose_name="Status at ECS3")
     abstract = models.FileField(blank=True, null=True, help_text="Only participants need to upload an abstract")
 
@@ -48,7 +48,6 @@ class Registration(models.Model):
 
     full_board  = models.BooleanField(default=False, help_text="")
     lunch_box   = models.BooleanField(default=False)
-
 
     accepted = models.NullBooleanField(editable=False)
     paid = models.NullBooleanField(editable=False)
