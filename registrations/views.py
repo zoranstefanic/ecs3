@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
 from .forms import RegistrationForm
 from .models import Registration
 
@@ -19,3 +20,7 @@ def thanks(request):
 
 def home(request):
     return render(request,'home.html')
+
+class RegistrationList(ListView):
+    model = Registration
+    template_name = "registration_list.html"
