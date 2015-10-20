@@ -10,6 +10,10 @@ class RegistrationCreate(CreateView):
     template_name = "register.html"
     success_url = "/registration/thanks/"
 
+    def form_valid(self, form):
+        form.send_email()
+        return super(RegistrationCreate, self).form_valid(form)
+
 def thanks(request):
     return render(request,'thanks.html')
 

@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from django.forms.extras.widgets import SelectDateWidget
+from django.core.mail import send_mail
 from django import forms
 from .models import Registration
 
@@ -19,3 +20,10 @@ class RegistrationForm(ModelForm):
             'arrival': SelectDateWidget(months= {9:'September',10:"October"}, years=['2016']),
             'departure': SelectDateWidget(months= {9:'September',10:"October"}, years=['2016']),
         }
+
+    def send_email(self):
+        # send email using the self.cleaned_data dictionary
+        send_mail('Subject here', 'Here is the message.', 'registrations@ecs3.ecanews.org',
+        ['zoran.stefanic@irb.hr'], fail_silently=False)
+
+    
