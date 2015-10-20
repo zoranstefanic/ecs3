@@ -31,7 +31,7 @@ class Registration(models.Model):
     name = models.CharField(max_length=50, verbose_name="Name")
     surname = models.CharField(max_length=50, verbose_name="Surname")
     email = models.EmailField(max_length=50)
-    date_of_birth = models.DateField(verbose_name="Date of birth", help_text="Format yyyy-mm-dd")
+    date_of_birth = models.DateField(verbose_name="Date of birth")
     affiliation = models.CharField(max_length=200,verbose_name="Affiliation")
     address = models.CharField(max_length=100)
 
@@ -43,8 +43,8 @@ class Registration(models.Model):
     hotel_category = models.IntegerField(choices=HOTELCHOICES, default=1)
     room_choice = models.IntegerField(choices=ROOMCHOICES, default=1)
     room_preference = models.CharField(max_length=50, verbose_name="I would like to share the room with", null=True, blank=True)
-    arrival     = models.DateField(verbose_name="Date of arrival", default="2016-09-25", help_text="Format dd-mm-yyyy")
-    departure   = models.DateField(verbose_name="Date of departure", default="2016-10-02", help_text="Format dd-mm-yyyy")
+    arrival     = models.DateField(verbose_name="Date of arrival", default="2016-09-25")
+    departure   = models.DateField(verbose_name="Date of departure", default="2016-10-02")
 
     full_board  = models.BooleanField(default=False, help_text="")
     lunch_box   = models.BooleanField(default=False)

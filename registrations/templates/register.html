@@ -2,11 +2,9 @@
 {% load bootstrap3 %}
 {% block 'content' %}
         <div class="row">
-            <div class="col-lg-8 col-md-offset-2">
-                <h1>
-                  Registration form
-                </h1>
-                <form action="." method="post" class="form">
+            <div class="col-lg-8 col-md-offset-2" style="background:#eef;padding:20px;">
+                <h1> Registration form </h1>
+                <form action="." method="post" class="form-horizontal" role="form">
                   {% csrf_token %}
                   {% bootstrap_form form %}
                   {% buttons %}
