@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-offset-2" style="background:#eef;padding:20px;">
                 <h1> Registration form </h1>
-                <form action="." method="post" class="form-horizontal" role="form">
+                <form action="." method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
                   {% csrf_token %}
                   {% bootstrap_form form %}
                   {% buttons %}

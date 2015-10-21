@@ -37,7 +37,9 @@ class Registration(models.Model):
 
     module = models.IntegerField(choices=MODULECHOICES)
     status = models.IntegerField(choices=STATUSCHOICES, verbose_name="Status at ECS3")
-    abstract = models.FileField(blank=True, null=True, help_text="Only participants need to upload an abstract")
+    abstract = models.FileField(upload_to="abstracts",
+                            blank=True, null=True, 
+                            help_text="Only participants need to upload an abstract")
 
     # Accommodation details
     hotel_category = models.IntegerField(choices=HOTELCHOICES, default=1)
@@ -49,13 +51,14 @@ class Registration(models.Model):
     full_board  = models.BooleanField(default=False, help_text="")
     lunch_box   = models.BooleanField(default=False)
 
-    accepted = models.NullBooleanField(editable=False)
-    paid = models.NullBooleanField(editable=False)
+    accepted = models.BooleanField(default=False,editable=False)
+    created = models.DateTimeField(auto_now_add=True,editable=False)
+    paid = models.BooleanField(default=False,editable=False)
     code = models.PositiveSmallIntegerField(editable=False, default = generate_code)
     
     def __unicode__(self):
        return '%s %s' % (self.name, self.surname)
 
     class Meta:
-        ordering = ['surname']
+        ordering = ['-created']
 

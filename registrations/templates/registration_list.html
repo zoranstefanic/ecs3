@@ -5,21 +5,31 @@
             <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Surname</th>
+                    <th>Name, email</th>
                     <th>Age</th>
+                    <th>Affiliation, address</th>
+                    <th>Module</th>
+                    <th>Status</th>
+                    <th>Abstract</th>
                     <th>Code</th>
-                    <th>Email</th>
+                    <th>Created</th>
+                    <th>Accepted</th>
+                    <th>Paid</th>
                 </tr>
             </thead>
             <tbody>
             {% for reg in object_list %}
                 <tr>
-                    <td>{{reg.name}}</td>
-                    <td>{{reg.surname}}</td>
+                    <td>{{reg.get_title_display}} {{reg.name}} {{reg.surname}}<br><a href="mailto:{{reg.email}}">{{reg.email}}</a></td>
                     <td>{{reg.date_of_birth|timesince}}</td>
+                    <td>{{reg.affiliation}}<br>{{reg.address}}</td>
+                    <td>{{reg.get_module_display}}</td>
+                    <td>{{reg.get_status_display}}</td>
+                    <td>{%if reg.abstract %}<a href="{{ reg.abstract.url }}">{{reg.abstract.name}}</a>{%endif%}</td>
                     <td>{{reg.code}}</td>
-                    <td>{{reg.email}}</td>
+                    <td>{{reg.created|timesince}}</td>
+                    <td>{{reg.accepted}}</td>
+                    <td>{{reg.paid}}</td>
                     <td></td>
                     <td></td>
                 </tr>
