@@ -25,6 +25,7 @@ def redir_ecs3(request):
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^registration/', include("registrations.urls")),
+    url(r"^account/", include("account.urls")),
     url(r'^$', redir_ecs3),
 ]
 
