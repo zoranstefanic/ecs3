@@ -109,6 +109,6 @@ MEDIA_URL = '/media/'
 
 
 try:
-    from local_settings.py import *
+    from ecs3.local_settings import *
 except:
     pass
