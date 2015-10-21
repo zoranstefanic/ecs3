@@ -40,3 +40,13 @@ def registration_accepted(request,pk):
     reg.accepted = True
     reg.save()
     return redirect('registration_list')
+
+def registration_pay(request,pk):
+    reg = Registration.objects.get(pk=pk)
+    return render(request,'registration_pay.html',{'reg':reg})
+
+def registration_paid(request,pk):
+    reg = Registration.objects.get(pk=pk)
+    reg.paid = True
+    reg.save()
+    return redirect('registration_list')

@@ -7,6 +7,8 @@ urlpatterns = [
     url(r'update/(?P<pk>\d+)$', views.RegistrationUpdate.as_view(), name='registration_update'),
     url(r'accept/(?P<pk>\d+)$', views.registration_accept, name='registration_accept'),
     url(r'accepted/(?P<pk>\d+)$', views.registration_accepted, name='registration_accepted'),
+    url(r'pay/(?P<pk>\d+)$', views.registration_pay, name='registration_pay'),
+    url(r'paid/(?P<pk>\d+)$', views.registration_paid, name='registration_paid'),
     url(r'list/$', views.RegistrationList.as_view(), name='registration_list'),
     url(r'thanks/$', views.thanks, name='thanks')
 ]

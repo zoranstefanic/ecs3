@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+{% block 'content' %}
+        <div class="row">
+            <div class="col-lg-6">
+            <h2>
+                        Are you sure you want to mark the registration as paid: {{ reg }}
+            </h2>
+            <a class="btn btn-success" href="{% url 'registration_accepted' reg.pk %}">Yes it is paid</a>
+            <a class="btn btn-warning pull-right" href="{% url 'registration_list' %}">No, go back to registration list</a>
+            </div>
+        </div>
+{% endblock %}
