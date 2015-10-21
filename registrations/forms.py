@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django.conf import settings
 from django.forms.extras.widgets import SelectDateWidget
 from django.core.mail import send_mail
 from django import forms
@@ -23,7 +24,8 @@ class RegistrationForm(ModelForm):
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
-        send_mail('Subject here', 'Here is the message.', 'registrations@ecs3.ecanews.org',
+	text = str(self.cleaned_data)
+        send_mail('Testing of ECS3 email', text, settings.DEFAULT_FROM_EMAIL,
         ['zoran.stefanic@irb.hr'], fail_silently=False)
 
     
