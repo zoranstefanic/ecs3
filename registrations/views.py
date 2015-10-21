@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import ListView
 from .forms import RegistrationForm
 from .models import Registration
@@ -24,3 +24,19 @@ def home(request):
 class RegistrationList(ListView):
     model = Registration
     template_name = "registration_list.html"
+
+class RegistrationUpdate(UpdateView):
+    model = Registration
+    form_class = RegistrationForm
+    template_name = 'registration_update.html'
+    success_url = "/registration/list/"
+
+def registration_accept(request,pk):
+    reg = Registration.objects.get(pk=pk)
+    return render(request,'registration_accept.html',{'reg':reg})
+
+def registration_accepted(request,pk):
+    reg = Registration.objects.get(pk=pk)
+    reg.accepted = True
+    reg.save()
+    return redirect('registration_list')

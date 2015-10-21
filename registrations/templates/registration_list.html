@@ -13,8 +13,8 @@
                     <th>Abstract</th>
                     <th>Code</th>
                     <th>Created</th>
-                    <th>Accepted</th>
-                    <th>Paid</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,8 +28,9 @@
                     <td>{%if reg.abstract %}<a href="{{ reg.abstract.url }}">{{reg.abstract.name}}</a>{%endif%}</td>
                     <td>{{reg.code}}</td>
                     <td>{{reg.created|timesince}}</td>
-                    <td>{{reg.accepted}}</td>
-                    <td>{{reg.paid}}</td>
+                    <td><a href="{% url 'registration_update' reg.pk %}"><button class="btn btn-default">Edit</button></a></td>
+                    <td>{% if not reg.accepted %}<a href="{% url 'registration_accept' reg.pk %}"><button class="btn btn-info">Accept</button></a>{% endif %}</td>
+                    <td>{% if not reg.paid %}<a href="#"><button class="btn btn-danger">Mark as paid</button></a>{% endif %}</td>
                     <td></td>
                     <td></td>
                 </tr>

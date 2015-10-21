@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{% load bootstrap3 %}
+{% block 'content' %}
+        <div class="row">
+            <div class="col-lg-8 col-md-offset-2" style="background:#eef;padding:20px;">
+            <h2>
+              Update registration : {{ object }} (ecs3_{{ object.code }})
+            </h2>
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+                  {% csrf_token %}
+                  {% bootstrap_form form %}
+                  {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                      {% bootstrap_icon "star" %} Submit
+                    </button>
+                  {% endbuttons %}
+                </form>
+            
+            </div>
+        </div>
+{% endblock %}

@@ -1,16 +1,18 @@
-from random import randint
+from random import choice
 from django.db import models
 
 MODULECHOICES = ((1, 'Single crystal diffraction'),
                  (2, 'Powder diffraction'))
 
-STATUSCHOICES = ((1, 'participant'),
+STATUSCHOICES = ((1, 'student'),
                  (2, 'lecturer'),
-                 (3, 'accompanying person'))
+                 (3, 'accompanying person'),
+                 (4, 'organizer'))
 
 TITLECHOICES = ((1, 'Mr.'),
                  (2, 'Ms.'),
-                 (3, 'Dr.'))
+                 (3, 'Dr.'),
+                 (4, 'Prof.'))
 
 HOTELCHOICES = ((1, '3***'),
                  (2, '4****'),
@@ -20,8 +22,10 @@ ROOMCHOICES = ((1, 'shared double room'),
                  )
 
 def generate_code():
-    i = randint(1,999)
-    return i
+    "This has to insure to pick a unique number from remaining"
+    taken_codes = set(Registration.objects.values_list('code',flat=True))
+    available_codes = set(range(1,999)) - taken_codes 
+    return choice(list(available_codes))
 
 class Registration(models.Model):
     "Stores registration and payment information"
@@ -51,9 +55,9 @@ class Registration(models.Model):
     full_board  = models.BooleanField(default=False, help_text="")
     lunch_box   = models.BooleanField(default=False)
 
-    accepted = models.BooleanField(default=False,editable=False)
+    accepted = models.BooleanField(default=False, editable=False)
     created = models.DateTimeField(auto_now_add=True,editable=False)
-    paid = models.BooleanField(default=False,editable=False)
+    paid = models.BooleanField(default=False, editable=False)
     code = models.PositiveSmallIntegerField(editable=False, default = generate_code)
     
     def __unicode__(self):
