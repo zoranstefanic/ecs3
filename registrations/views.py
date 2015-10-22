@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import ListView
 from .forms import RegistrationForm
@@ -31,20 +32,25 @@ class RegistrationUpdate(UpdateView):
     template_name = 'registration_update.html'
     success_url = "/registration/list/"
 
+
+@login_required
 def registration_accept(request,pk):
     reg = Registration.objects.get(pk=pk)
     return render(request,'registration_accept.html',{'reg':reg})
 
+@login_required
 def registration_accepted(request,pk):
     reg = Registration.objects.get(pk=pk)
     reg.accepted = True
     reg.save()
     return redirect('registration_list')
 
+@login_required
 def registration_pay(request,pk):
     reg = Registration.objects.get(pk=pk)
     return render(request,'registration_pay.html',{'reg':reg})
 
+@login_required
 def registration_paid(request,pk):
     reg = Registration.objects.get(pk=pk)
     reg.paid = True
