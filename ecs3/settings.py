@@ -111,6 +111,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
+LOGIN_URL = "/account/login/"
+ACCOUNT_LOGIN_REDIRECT_URL = "/registration/list/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/registration/list/"
 
 try:
     from ecs3.local_settings import *

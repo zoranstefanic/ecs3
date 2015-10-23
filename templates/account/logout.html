@@ -5,9 +5,15 @@
 
 {% block 'content' %}
     <div class="row">
-        <div class="col-md-4">
-Logout
-    <a href="{% url 'account_login' %}"> Log in again</a>
+        <div class="col-md-5">
+            <form method="POST" action="{% url "account_logout" %}">
+                <legend>Log out</legend>
+                <fieldset>
+                    {% csrf_token %}
+                    <p>Are you sure you want to log out?</p>
+                    <button type="submit" class="btn btn-primary">Log out</button>
+                </fieldset>
+            </form>
         </div>
     </div>
 {% endblock %}
