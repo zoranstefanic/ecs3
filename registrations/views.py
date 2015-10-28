@@ -20,7 +20,7 @@ def thanks(request):
     return render(request,'thanks.html')
 
 def home(request):
-    return render(request,'home.html')
+    return redirect('/')
 
 class RegistrationList(ListView):
     model = Registration
