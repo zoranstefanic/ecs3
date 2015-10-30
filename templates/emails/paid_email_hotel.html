@@ -10,7 +10,7 @@
     <td>
     This is an automatically generated email stating that the following registration for the ECS3 is paid in full.
     Please use the following information to book the reservation for the participant and to send the invoice for the accommodation to the following e-mail address: <a href="mailto:{{reg.email}}">{{reg.email}}</a>
-    <table>
+    <table style="color:#444;">
         <tr>
             <td>Registration code</td>
             <td>ECS3_{{reg.code}}</td>
@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <td>Status at ECS3</td>
-            <td>{{reg.status}}</td>
+            <td>{{reg.get_status_display}}</td>
         </tr>
         <tr>
             <td>Registration date and time</td>
@@ -45,11 +45,11 @@
         </tr>
         <tr>
             <td>Hotel category</td>
-            <td>{{reg.hotel_category}}</td>
+            <td>{{reg.get_hotel_category_display}}</td>
         </tr>
         <tr>
             <td>Room choice</td>
-            <td>{{reg.room_choice}}</td>
+            <td>{{reg.get_room_choice_display}}</td>
         </tr>
         <tr>
             <td>Room preference</td>
@@ -77,25 +77,6 @@
         </tr>
     </table>
     </td>
-
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    </td>
-
     <td>
         <img height="200" width="300" src="http://ecs3.ecanews.org/ECS3/ecs3.png">
     </td>

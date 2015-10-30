@@ -23,9 +23,8 @@ class RegistrationForm(ModelForm):
         }
 
     def send_email(self):
-        # send email using the self.cleaned_data dictionary
-	text = str(self.cleaned_data)
-        send_mail('Testing of ECS3 email', text, settings.DEFAULT_FROM_EMAIL,
-        ['zoran.stefanic@irb.hr'], fail_silently=False)
+        message = "New registration was created. See at http://ecs3.ecanews.org/registration/list/"
+        send_mail('New registration created', message, settings.DEFAULT_FROM_EMAIL,
+        [settings.DEFAULT_FROM_EMAIL], fail_silently=False)
 
     
