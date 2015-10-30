@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import ListView
@@ -32,7 +34,6 @@ class RegistrationUpdate(UpdateView):
     template_name = 'registration_update.html'
     success_url = "/registration/list/"
 
-
 @login_required
 def registration_accept(request,pk):
     reg = Registration.objects.get(pk=pk)
@@ -43,6 +44,7 @@ def registration_accepted(request,pk):
     reg = Registration.objects.get(pk=pk)
     reg.accepted = True
     reg.save()
+    send_accept_email(reg)
     return redirect('registration_list')
 
 @login_required
@@ -56,3 +58,15 @@ def registration_paid(request,pk):
     reg.paid = True
     reg.save()
     return redirect('registration_list')
+
+
+SENDER = 'ecs3@ecs3croatia.org'
+def send_accept_email(reg):
+    subject = '3rd European Crystallography School acceptance'
+    from_email = SENDER
+    text_content = render_to_string('emails/accept_email.txt', {"reg":reg})
+    html_content = render_to_string('emails/accept_email.html', {"reg":reg})
+    msg = EmailMultiAlternatives(subject, text_content, from_email, [reg.email])
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
+    print "Email sent to: %s" %reg.email
