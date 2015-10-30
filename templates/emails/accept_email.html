@@ -8,7 +8,7 @@
 <table style="font-family:Helvetica;background-color: #fff;" cellspacing="0" cellpadding="5" valign="top">
 <tr valign="top">
     <td>
-    Dear {{reg.title}} {{reg.name}} {{reg.surname}}, 
+    Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}}, 
 
     <p>
         It is our great pleasure to inform you that your abstract has been approved for
@@ -16,13 +16,13 @@
     </p>
 
     <p>
-        Your reference code for ECS3 is ECS3_{{reg.code}
+        Your reference code for ECS3 is:<span style="color:red;font-weight:bold;">ECS3_{{reg.code}}<span>
     </p>
 
     <p>Now, please pay the Registration fee (according to your status), as soon as
     possible, by the bank transfer. 
     </p> 
-    <table style="font-family:Helvetica;background-color: #fff;color:blue; width:30%;" cellspacing="0" cellpadding="5" valign="top">
+    <table style="font-family:Helvetica;background-color: #fff;color:blue;" cellspacing="0" cellpadding="2" valign="top">
         <tr>
             <td></td>
             <td>Early bird</td>
@@ -64,20 +64,40 @@
         you receive an e-mail from Bursary committee on April 7th, 2016.  
     </p>
 
-    <p style="color:red;font-weight:bold;">
+    <p>
     To process your payment, use the following data:<br>
     <hr>
-    Account holder name: Hrvatska udruga kristalografa, Bijenička 54, 10000 Zagreb, Hrvatska<br>
-    VAT:                       HR47378791658 <br>
-    Bank:                      Erste & Steiermärkische bank dd,<br>
-    Branch Address:            Jadranski trg 3a, 51000 Rijeka, Hrvatska<br>
-    IBAN:                      HR1524020061100637321<br>
-    SWIFT/BIC:                 ESBCHR22<br>
+    <table style="font-family:Helvetica;color:#444;" cellspacing="0" cellpadding="2" valign="top">
+        <tr>
+            <td>Account holder name:</td>
+            <td>Hrvatska udruga kristalografa, Bijenička 54, 10000 Zagreb, Hrvatska</td>
+        </tr>
+        <tr>
+            <td>VAT:</td>
+            <td>HR47378791658</tr>
+        </tr>
+        <tr>
+            <td>Bank:</td>
+            <td>Erste & Steiermärkische bank dd</tr>
+        </tr>
+        <tr>
+            <td>Branch Address:</td>
+            <td>Jadranski trg 3a, 51000 Rijeka, Hrvatska</tr>
+        </tr>
+        <tr>
+            <td>IBAN:</td>
+            <td>HR1524020061100637321</tr>
+        </tr>
+        <tr>
+            <td>SWIFT/BIC:</td>
+            <td>ESBCHR22</tr>
+        </tr>
+    </table>
     <hr>
 
     <p>
-        Please indicate clearly the event, your last name, and your registration's
-        reference code as in following example: ECS3, Smith (134).
+        Please indicate clearly your last name, and your reference
+        code like this: {{reg.last_name}}, ECS3_{{reg.code}}.
     </p>
 
    <p> Conformation of your attendance for the ECS3 will be send in an e-mail message
@@ -94,7 +114,7 @@
     </td>
 
     <td>
-        <img height="300" width="400" src="http://ecs3.ecanews.org/ECS3/ecs3.png">
+        <img height="200" width="300" src="http://ecs3.ecanews.org/ECS3/ecs3.png">
     </td>
 </tr>
 </table>
