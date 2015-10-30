@@ -75,7 +75,7 @@ ESBCHR22
 * * *
 
 Please indicate clearly your last name, and your reference code like this:
-{{reg.last_name}}, ECS3_{{reg.code}}.
+{{reg.surname}}, ECS3_{{reg.code}}.
 
 Conformation of your attendance for the ECS3 will be send in an e-mail message
 after your registration fee has been received. You will also receive an

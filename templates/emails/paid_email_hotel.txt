@@ -1,0 +1,72 @@
+This is an automatically generated email stating that the following
+registration for the ECS3 is paid in full. Please use the following
+information to book the reservation for the participant and to send the
+invoice for the accommodation to the following e-mail address:
+[{{reg.email}}](mailto:{{reg.email}})
+
+Registration code
+
+ECS3_{{reg.code}}
+
+Name
+
+{{reg.get_title_display}} {{reg.name}} {{reg.surname}}
+
+Email
+
+{{reg.email}}
+
+Date of birth
+
+{{reg.date_of_birth}}
+
+Affiliation
+
+{{reg.affiliation}}
+
+Address
+
+{{reg.address}}
+
+Status at ECS3
+
+{{reg.status}}
+
+Registration date and time
+
+{{reg.created}}
+
+Hotel category
+
+{{reg.hotel_category}}
+
+Room choice
+
+{{reg.room_choice}}
+
+Room preference
+
+Would like to share the room with: {{reg.room_preference}}
+
+Arrival
+
+{{reg.arrival}}
+
+Departure
+
+{{reg.departure}}
+
+Full board
+
+{{reg.full_board|yesno:"Yes,No"}}
+
+Lunch box
+
+{{reg.lunch_box|yesno:"Yes,No"}}
+
+Registration paid:
+
+{{reg.paid|yesno:"Yes,No"}}
+
+![](http://ecs3.ecanews.org/ECS3/ecs3.png)
+

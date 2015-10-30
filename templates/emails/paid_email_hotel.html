@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECS3 acceptance</title>
+</head>
+<body>
+<table style="font-family:Helvetica;background-color: #fff;" cellspacing="0" cellpadding="5" valign="top">
+<tr valign="top">
+    <td>
+    This is an automatically generated email stating that the following registration for the ECS3 is paid in full.
+    Please use the following information to book the reservation for the participant and to send the invoice for the accommodation to the following e-mail address: <a href="mailto:{{reg.email}}">{{reg.email}}</a>
+    <table>
+        <tr>
+            <td>Registration code</td>
+            <td>ECS3_{{reg.code}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{reg.get_title_display}} {{reg.name}} {{reg.surname}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{reg.email}}</td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td>{{reg.date_of_birth}}</td>
+        </tr>
+        <tr>
+            <td>Affiliation</td>
+            <td>{{reg.affiliation}}</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>{{reg.address}}</td>
+        </tr>
+        <tr>
+            <td>Status at ECS3</td>
+            <td>{{reg.status}}</td>
+        </tr>
+        <tr>
+            <td>Registration date and time</td>
+            <td>{{reg.created}}</td>
+        </tr>
+        <tr>
+            <td>Hotel category</td>
+            <td>{{reg.hotel_category}}</td>
+        </tr>
+        <tr>
+            <td>Room choice</td>
+            <td>{{reg.room_choice}}</td>
+        </tr>
+        <tr>
+            <td>Room preference</td>
+            <td>Would like to share the room with: {{reg.room_preference}}</td>
+        </tr>
+        <tr>
+            <td>Arrival</td>
+            <td>{{reg.arrival}}</td>
+        </tr>
+        <tr>
+            <td>Departure</td>
+            <td>{{reg.departure}}</td>
+        </tr>
+        <tr>
+            <td>Full board</td>
+            <td>{{reg.full_board|yesno:"Yes,No"}}</td>
+        </tr>
+        <tr>
+            <td>Lunch box</td>
+            <td>{{reg.lunch_box|yesno:"Yes,No"}}</td>
+        </tr>
+        <tr>
+            <td>Registration paid:</td>
+            <td>{{reg.paid|yesno:"Yes,No"}}</td>
+        </tr>
+    </table>
+    </td>
+
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    </td>
+
+    <td>
+        <img height="200" width="300" src="http://ecs3.ecanews.org/ECS3/ecs3.png">
+    </td>
+</tr>
+</table>
+</body>
+</html>
