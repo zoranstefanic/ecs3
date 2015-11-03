@@ -10,18 +10,12 @@
     <td>
     Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}}, 
 
-    <p>
-        It is our great pleasure to inform you that your abstract has been approved for
-        the ECS3. 
-    </p>
+{% if not reg.status == 2 %}
+    <p>It is our great pleasure to inform you that your application for the participation at ECS3 has been accepted.</p>
+    <p>Your reference code for ECS3 is:<span style="color:red;font-weight:bold;">ECS3_{{reg.code}}<span></p>
+    <p>Your status is:<span style="color:red;font-weight:bold;">{{reg.get_status_display}}<span></p>
 
-    <p>
-        Your reference code for ECS3 is:<span style="color:red;font-weight:bold;">ECS3_{{reg.code}}<span>
-    </p>
-
-    <p>Now, please pay the Registration fee (according to your status), as soon as
-    possible, by the bank transfer. 
-    </p> 
+    <p>Please proceed with your registration fee payment (according to your status), as soon as possible, by the bank transfer.</p> 
     <table style="font-family:Helvetica;background-color: #fff;color:blue;" cellspacing="0" cellpadding="2" valign="top">
         <tr>
             <td></td>
@@ -50,7 +44,7 @@
         </tr>
         <tr>
         <td colspan="3">
-            *undergraduate/Ph.D. student or post-doc researcher with a max. age of 32.
+            *undergraduate/Ph.D. student or post-doc researcher with a max. age of 35.
         </td>
         </tr>
     </table>
@@ -100,16 +94,22 @@
         code like this: {{reg.surname}}, ECS3_{{reg.code}}.
     </p>
 
-   <p> Conformation of your attendance for the ECS3 will be send in an e-mail message
+   <p>Confirmation of your attendance for the ECS3 will be sent in an e-mail message
     after your registration fee has been received. You will also receive an
     additional e-mail with the invoice for payment of the accommodation option you
     have chosen in Registration form.
     </p>
 
-    <p>
-        Should you have any questions please do not hesitate to contact us.<br>
-        With best regards,<br>
-        Organising committee of the ECS3<br>
+{% else %}
+    <p>It is our great pleasure to inform you that you have successfuly registered for the participation at the ECS3.</p>
+    <p>Your reference code for ECS3 is:<span style="color:red;font-weight:bold;">ECS3_{{reg.code}}<span></p>
+    <p>Your status is:<span style="color:red;font-weight:bold;">{{reg.get_status_display}}<span></p>
+    <p>We are looking forward to meeting you in Bol.<p>
+{% endif %}
+
+    <p>Should you have any questions please do not hesitate to <a href="mailto:ecs3@ecs3croatia.org">contact us</a>.<br>
+       With best regards,<br>
+       Organising committee of the ECS3<br>
     </p>
     </td>
 

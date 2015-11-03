@@ -3,12 +3,11 @@
 {% block 'content' %}
         <div class="row">
             <div class="alert alert-success" role="alert">
-                <h3>Thank you for registering for the 3rd European crystallographic school!</h3>
-                <p>
-                  If you registered as a student your abstract will be evaluated. If your abstract is accepted you will soon receive an e-mail with the information necessary to pay the registration fee and proceed to book your accommodation in Bol.<br> 
-                  If you registered as a lecturer or an accompanying person, there is no need to upload your abstract. You will receive an e-mail shortly with the information on how to proceed.
-                </p>
-            <a class="btn" href="{% url 'home' %}">Back to home</a>
+            <a class="pull-right" href="http://ecs3.ecanews.org/"><img height="150" width="200" src="http://ecs3.ecanews.org/ECS3/ecs3.png"></a>
+            <h3>Thank you for registering for the 3rd European crystallographic school!</h3>
+            <p>If you registered as a <b>young academic</b> your abstract will be evaluated. Upon the evaluation of your abstract you will be formally notified of the acceptance to attend the ECS3.</p>
+            <p>In all other cases you will soon receive the information necessary to pay the registration fee (if applicable) and proceed to book your accommodation in Bol.</p>
+            <a class="btn btn-info" href="{% url 'home' %}">Back to home</a>
             </div>
         </div>
 {% endblock %}

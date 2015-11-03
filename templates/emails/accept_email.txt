@@ -1,12 +1,15 @@
-Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}},
+Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}}, {% if not
+reg.status == 2 %}
 
-It is our great pleasure to inform you that your abstract has been approved
-for the ECS3.
+It is our great pleasure to inform you that your application for the
+participation at ECS3 has been accepted.
 
 Your reference code for ECS3 is:ECS3_{{reg.code}}
 
-Now, please pay the Registration fee (according to your status), as soon as
-possible, by the bank transfer.
+Your status is:{{reg.get_status_display}}
+
+Please proceed with your registration fee payment (according to your status),
+as soon as possible, by the bank transfer.
 
 Early bird
 
@@ -36,7 +39,7 @@ Accompanying person:
 
 310 €
 
-*undergraduate/Ph.D. student or post-doc researcher with a max. age of 32. 
+*undergraduate/Ph.D. student or post-doc researcher with a max. age of 35. 
 
 Deadline for payment of the early bird registration fee is May 15, 2016.
 Participants are advised to insure early payment.
@@ -77,16 +80,30 @@ ESBCHR22
 Please indicate clearly your last name, and your reference code like this:
 {{reg.surname}}, ECS3_{{reg.code}}.
 
-Conformation of your attendance for the ECS3 will be send in an e-mail message
+Confirmation of your attendance for the ECS3 will be sent in an e-mail message
 after your registration fee has been received. You will also receive an
 additional e-mail with the invoice for payment of the accommodation option you
 have chosen in Registration form.
 
-Should you have any questions please do not hesitate to contact us.
+{% else %}
+
+It is our great pleasure to inform you that you have successfuly registered
+for the participation at the ECS3.
+
+Your reference code for ECS3 is:ECS3_{{reg.code}}
+
+Your status is:{{reg.get_status_display}}
+
+We are looking forward to meeting you in Bol.
+
+{% endif %}
+
+Should you have any questions please do not hesitate to [contact
+us](mailto:ecs3@ecs3croatia.org).
 
 With best regards,
 
 Organising committee of the ECS3
 
-![](http://ecs3.ecanews.org/ECS3/ecs3.png)
+[![](http://ecs3.ecanews.org/ECS3/ecs3.png)](http://ecs3.ecanews.org/)
 

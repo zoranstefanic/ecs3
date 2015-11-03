@@ -22,6 +22,26 @@ class RegistrationForm(ModelForm):
             'departure': SelectDateWidget(months= {9:'September',10:"October"}, years=['2016']),
         }
 
+    def clean_abstract(self):
+        "Do not allow empty abstract field if status is young academic"
+        
+        status = self.cleaned_data['status']
+        if status == 1 and not self.cleaned_data['abstract']:
+            raise forms.ValidationError("You must upload an abstract if you are a young academic!")        
+        
+        return self.cleaned_data['abstract']
+
+
+    def clean_departure(self):
+        "Departure must come after arrival"
+        
+        arrival = self.cleaned_data['arrival']
+        departure = self.cleaned_data['departure']
+        if departure <= arrival:
+            raise forms.ValidationError("Departure date must come after arrival date!")
+        
+        return self.cleaned_data['departure']
+
     def send_email(self):
         message = "New registration was created. See at http://ecs3.ecanews.org/registration/list/"
         send_mail('New registration created', message, settings.DEFAULT_FROM_EMAIL,

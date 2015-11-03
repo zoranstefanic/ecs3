@@ -4,7 +4,9 @@ from django.db import models
 MODULECHOICES = ((1, 'Single crystal diffraction'),
                  (2, 'Powder diffraction'))
 
-STATUSCHOICES = ((1, 'student'),
+STATUSCHOICES = ((1, 'young academic'),
+                 (5, 'senior academic'),
+                 (6, 'non-academic'),
                  (2, 'lecturer'),
                  (3, 'accompanying person'),
                  (4, 'organizer'))
@@ -34,7 +36,7 @@ class Registration(models.Model):
     title = models.IntegerField(choices=TITLECHOICES, default=1)
     name = models.CharField(max_length=50, verbose_name="Name")
     surname = models.CharField(max_length=50, verbose_name="Surname")
-    email = models.EmailField(max_length=50)
+    email = models.EmailField(max_length=50, unique=True)
     date_of_birth = models.DateField(verbose_name="Date of birth")
     affiliation = models.CharField(max_length=200,verbose_name="Affiliation")
     address = models.CharField(max_length=100)
@@ -43,7 +45,7 @@ class Registration(models.Model):
     status = models.IntegerField(choices=STATUSCHOICES, verbose_name="Status at ECS3")
     abstract = models.FileField(upload_to="abstracts",
                             blank=True, null=True, 
-                            help_text="Only participants need to upload an abstract")
+                            help_text="Upload your abstract.")
 
     # Accommodation details
     hotel_category = models.IntegerField(choices=HOTELCHOICES, default=1)
