@@ -87,12 +87,17 @@ have chosen in Registration form.
 
 {% else %}
 
-It is our great pleasure to inform you that you have successfuly registered
+It is our great pleasure to inform you that you have successfully registered
 for the participation at the ECS3.
 
 Your reference code for ECS3 is:ECS3_{{reg.code}}
 
 Your status is:{{reg.get_status_display}}
+
+The Organising committee will arrange and cover the expanses of your
+accommodation on half-board basis in the [Bluesun Hotel Elaphusa
+(4****)](http://www.hotelelaphusabrac.com/en/). Please note that unfortunately
+we are not able to cover your travel expanses.
 
 We are looking forward to meeting you in Bol.
 
