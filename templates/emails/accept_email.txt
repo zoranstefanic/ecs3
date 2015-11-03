@@ -1,5 +1,6 @@
-Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}}, {% if not
-reg.status == 2 %}
+Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}}, 
+
+{% if not reg.status == 2 %}
 
 It is our great pleasure to inform you that your application for the
 participation at ECS3 has been accepted.
@@ -87,19 +88,19 @@ have chosen in Registration form.
 
 {% else %}
 
-It is our great pleasure to inform you that you have successfully registered
-for the participation at the ECS3.
+	It is our great pleasure to inform you that you have successfully registered
+	for the participation at the ECS3.
 
-Your reference code for ECS3 is:ECS3_{{reg.code}}
+	Your reference code for ECS3 is:ECS3_{{reg.code}}
 
-Your status is:{{reg.get_status_display}}
+	Your status is:{{reg.get_status_display}}
 
-The Organising committee will arrange and cover the expanses of your
-accommodation on half-board basis in the [Bluesun Hotel Elaphusa
-(4****)](http://www.hotelelaphusabrac.com/en/). Please note that unfortunately
-we are not able to cover your travel expanses.
+	The Organising committee will arrange and cover the expanses of your
+	accommodation on half-board basis in the [Bluesun Hotel Elaphusa
+	(4****)](http://www.hotelelaphusabrac.com/en/). Please note that unfortunately
+	we are not able to cover your travel expanses.
 
-We are looking forward to meeting you in Bol.
+	We are looking forward to meeting you in Bol.
 
 {% endif %}
 

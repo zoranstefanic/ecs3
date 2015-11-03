@@ -30,7 +30,7 @@
                     <td>{{reg.created|timesince}}</td>
                     <td><a href="{% url 'registration_update' reg.pk %}"><button class="btn btn-default">Edit</button></a></td>
                     <td>{% if not reg.accepted %}<a href="{% url 'registration_accept' reg.pk %}"><button class="btn btn-info">Accept</button></a>{% endif %}</td>
-                    <td>{% if not reg.paid %}<a href="{% url 'registration_pay' reg.pk %}"><button class="btn btn-danger">Mark as paid</button></a>{% endif %}</td>
+                    <td>{% if not reg.paid and reg.accepted %}<a href="{% url 'registration_pay' reg.pk %}"><button class="btn btn-danger">Mark as paid</button></a>{%elif not reg.accepted and not reg.paid%}<button class="btn btn-default">Mark as paid (inactive)</button>{% endif %}</td>
                     <td></td>
                     <td></td>
                 </tr>
