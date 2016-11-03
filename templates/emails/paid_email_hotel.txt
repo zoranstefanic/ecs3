@@ -1,12 +1,12 @@
 This is an automatically generated email stating that the following
-registration for the ECS3 is paid in full. Please use the following
-information to book the reservation for the participant and to send the
-invoice for the accommodation to the following e-mail address:
-[{{reg.email}}](mailto:{{reg.email}})
+registration for the [Hot Topics in Contemporary Crystallography
+2017](http://www.htcc2017.org) is paid in full. Please use the following
+information to book the accommodation for the participant and to send the
+invoice to the following e-mail address: [{{reg.email}}](mailto:{{reg.email}})
 
 Registration code
 
-ECS3_{{reg.code}}
+{{reg.code}}
 
 Name
 
@@ -28,9 +28,9 @@ Address
 
 {{reg.address}}
 
-Status at ECS3
+Status at HTCC2017
 
-{{reg.status}}
+{{reg.get_status_display}}
 
 Registration date and time
 
@@ -38,11 +38,11 @@ Registration date and time
 
 Hotel category
 
-{{reg.hotel_category}}
+{{reg.get_hotel_category_display}}
 
 Room choice
 
-{{reg.room_choice}}
+{{reg.get_room_choice_display}}
 
 Room preference
 
@@ -56,17 +56,9 @@ Departure
 
 {{reg.departure}}
 
-Full board
-
-{{reg.full_board|yesno:"Yes,No"}}
-
-Lunch box
-
-{{reg.lunch_box|yesno:"Yes,No"}}
-
 Registration paid:
 
 {{reg.paid|yesno:"Yes,No"}}
 
-![](http://ecs3.ecanews.org/ECS3/ecs3.png)
+(http://www.htcc2017.org)
 

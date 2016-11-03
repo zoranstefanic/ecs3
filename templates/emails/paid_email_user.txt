@@ -1,19 +1,19 @@
 Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}},
 
-It is our great pleasure to confirm your attendance at ECS3. The receipt for
-your payment will be provided at the School's Registration Desk upon arrival.
+It is our great pleasure to confirm your attendance at the HTCC2017. The
+receipt for your payment will be provided at the Registration Desk upon
+arrival.
 
-Shortly, you will be contacted by the BlueSun Hotel with the invoice and
+Shortly, you will be contacted by the Valamar Hotels with the invoice and
 detailed instructions on how to proceed with payment of the accommodation
 option you have chosen in the Registration form.
 
-For practical information about the travel please visit
-http://ecs3.ecanews.org/travel but should you have any additional questions do
-not hesitate to contact us!
+For practical information about the travel please visit http://htcc2017.org
+but should you have any additional questions do not hesitate to contact us.
 
 With best regards
 
-Organizing committee of the ECS3.
+Organizing committee of the HTCC2017.
 
-![](http://ecs3.ecanews.org/ECS3/ecs3.png)
+(http://www.htcc2017.org)
 

@@ -5,6 +5,7 @@
             <table class="table table-striped" style="background:white;">
             <thead>
                 <tr>
+                    <th>No</th>
                     <th>Name, email</th>
                     <th>Age</th>
                     <th>Affiliation, address</th>
@@ -20,6 +21,7 @@
             <tbody>
             {% for reg in object_list %}
                 <tr>
+                    <td>{{forloop.revcounter}}</td>
                     <td>{{reg.get_title_display}} {{reg.name}} {{reg.surname}}<br><a href="mailto:{{reg.email}}">{{reg.email}}</a></td>
                     <td>{{reg.date_of_birth|timesince}}</td>
                     <td>{{reg.affiliation}}<br>{{reg.address}}</td>

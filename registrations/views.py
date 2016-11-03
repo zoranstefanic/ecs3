@@ -9,9 +9,8 @@ from .forms import RegistrationForm
 from .models import Registration
 
 
-SENDER = 'ecs3@ecs3croatia.org'
-HOTEL_EMAIL = "reservations@bluesunhotels.com"
-HOTEL_EMAIL = SENDER
+SENDER = 'htcc2017@hrvatska-udruga-kristalografa.hr'
+#HOTEL_EMAIL = SENDER
 
 class RegistrationCreate(CreateView):
     model = Registration
@@ -32,6 +31,11 @@ def home(request):
 class RegistrationList(ListView):
     model = Registration
     template_name = "registration_list.html"
+
+class RegistrationListPaid(ListView):
+    model = Registration
+    template_name = "registration_list.html"
+    queryset = Registration.objects.filter(paid=True) 
 
 class RegistrationUpdate(UpdateView):
     model = Registration
@@ -70,7 +74,7 @@ def registration_paid(request,pk):
 
 
 def send_accept_email(reg):
-    subject = '3rd European Crystallography School acceptance'
+    subject = 'Hot topics in contemporary crystallography 2017 acceptance'
     from_email = SENDER
     text_content = render_to_string('emails/accept_email.txt', {"reg":reg})
     html_content = render_to_string('emails/accept_email.html', {"reg":reg})
@@ -82,7 +86,7 @@ def send_accept_email(reg):
 def paid_email_user(reg):
     """ Send an email to user confirming her/his payment """
 
-    subject = 'Registration ECS3_%s is paid' % reg.code
+    subject = 'Registration for HTCC2017 number %s is paid' % reg.code
     from_email = SENDER
     text_content = render_to_string('emails/paid_email_user.txt', {"reg":reg})
     html_content = render_to_string('emails/paid_email_user.html', {"reg":reg})

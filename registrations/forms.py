@@ -18,18 +18,19 @@ class RegistrationForm(ModelForm):
             'surname': forms.TextInput(
                 attrs={'placeholder': 'Your surname'}),
             'date_of_birth': SelectDateWidget(years= YEAR_CHOICES),
-            'arrival': SelectDateWidget(months= {9:'September',10:"October"}, years=['2016']),
-            'departure': SelectDateWidget(months= {9:'September',10:"October"}, years=['2016']),
+            'arrival': SelectDateWidget(months= {4:'April'}, years=['2017']),
+            'departure': SelectDateWidget(months= {4:'April'}, years=['2017']),
         }
 
-    def clean_abstract(self):
-        "Do not allow empty abstract field if status is young academic"
+    #def clean_abstract(self):
+    #    "Do not allow empty abstract field if status is young academic"
+        # Ovo smo poslije ukinuli!
         
-        status = self.cleaned_data['status']
-        if status == 1 and not self.cleaned_data['abstract']:
-            raise forms.ValidationError("You must upload an abstract if you are a young academic!")        
-        
-        return self.cleaned_data['abstract']
+    #    status = self.cleaned_data['status']
+    #    if status == 1 and not self.cleaned_data['abstract']:
+    #        raise forms.ValidationError("You must upload an abstract if you are a young academic!")        
+    #    
+    #    return self.cleaned_data['abstract']
 
 
     def clean_departure(self):
@@ -43,8 +44,8 @@ class RegistrationForm(ModelForm):
         return self.cleaned_data['departure']
 
     def send_email(self):
-        message = "New registration was created. See at http://ecs3.ecanews.org/registration/list/"
-        send_mail('New registration created', message, settings.DEFAULT_FROM_EMAIL,
+        message = "New registration for HTCC2017 was created. See at http://ecs3.ecanews.org/registration/list/"
+        send_mail('New registration for HTCC2017 was created', message, settings.DEFAULT_FROM_EMAIL,
         [settings.DEFAULT_FROM_EMAIL], fail_silently=False)
 
     

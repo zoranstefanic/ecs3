@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'thanks/$', views.thanks, name='thanks'),
     # Below are the login protected views
     url(r'list/$', login_required(views.RegistrationList.as_view()), name='registration_list'),
+    url(r'list_paid/$', login_required(views.RegistrationListPaid.as_view()), name='registration_list_paid'),
     url(r'update/(?P<pk>\d+)$', login_required(views.RegistrationUpdate.as_view()), name='registration_update'),
     url(r'accept/(?P<pk>\d+)$', views.registration_accept, name='registration_accept'),
     url(r'accepted/(?P<pk>\d+)$', views.registration_accepted, name='registration_accepted'),

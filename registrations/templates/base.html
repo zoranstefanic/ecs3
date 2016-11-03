@@ -17,7 +17,7 @@
     <!-- Custom CSS -->
     <style>
     body {
-        background: rgb(0, 76, 133);
+        background: #FFF;
         padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
@@ -49,7 +49,10 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'registration_list' %}">Registrations</a>
+                            <a href="{% url 'registration_list' %}">All regs</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'registration_list_paid' %}">Paid regs</a>
                         </li>
                         <li>
                             <a href="{% url 'account_logout' %}">Logout</a>

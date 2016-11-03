@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ECS3 acceptance</title>
+    <title>HTCC2017 acceptance</title>
 </head>
 <body>
 <table style="font-family:Helvetica;background-color: #fff;" cellspacing="0" cellpadding="5" valign="top">
@@ -10,53 +10,13 @@
     <td>
     Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}}, 
 
-{% if not reg.status == 2 %}
-    <p>It is our great pleasure to inform you that your application for the participation at ECS3 has been accepted.</p>
-    <p>Your reference code for ECS3 is:<span style="color:red;font-weight:bold;">ECS3_{{reg.code}}<span></p>
-    <p>Your status is:<span style="color:red;font-weight:bold;">{{reg.get_status_display}}<span></p>
+    <p>It is our great pleasure to inform you that your application for the participation at HTCC2017 has been accepted.</p>
+    <p>Your reference code for HTCC2017 is:<span style="color:red;font-weight:bold;"> {{reg.code}}<span></p>
+    <p>Your status is:<span style="color:red;font-weight:bold;"> {{reg.get_status_display}}<span></p>
 
-    <p>Please proceed with your registration fee payment (according to your status), as soon as possible, by the bank transfer.</p> 
-    <table style="font-family:Helvetica;background-color: #fff;color:blue;" cellspacing="0" cellpadding="2" valign="top">
-        <tr>
-            <td></td>
-            <td>Early bird</td>
-            <td>Late bird</td>
-        </tr>
-        <tr>
-            <td>Young* academic:</td>
-            <td>350 €</td>
-            <td>410 €</td>
-        </tr>
-        <tr>
-            <td>Senior academic:</td>
-            <td>430 €</td>
-            <td>490 €</td>
-        </tr>
-        <tr>
-            <td>Non academic:</td>
-            <td>600 €</td>
-            <td>660 €</td>
-        </tr>
-        <tr>
-            <td>Accompanying person:</td>
-            <td>250 €</td>
-            <td>310 €</td>
-        </tr>
-        <tr>
-        <td colspan="3">
-            *undergraduate/Ph.D. student or post-doc researcher with a max. age of 35.
-        </td>
-        </tr>
-    </table>
-    <p>
-        Deadline for payment of the early bird registration fee is May 15, 2016.
-        Participants are advised to insure early payment.
-    </p>    
+    <p>Please proceed with your registration fee payment (if applicable, <em>i.e.</em> according to your status). Deadline for payment of the early bird registration fee is Jan. 31<sup>st</sup>, 2017.</p> 
 
-    <p style="color:red;font-weight:bold;">
-        IMPORTANT: if you have applied for bursary please DO NOT make any payments until
-        you receive an e-mail from Bursary committee on April 7th, 2016.  
-    </p>
+    <p style="color:red;font-weight:bold;">IMPORTANT: if you have applied for bursary please DO NOT make any payments until you receive an e-mail from Bursary committee on Jan. 15<sup>th</sup>, 2017.</p>
 
     <p>
     To process your payment, use the following data:<br>
@@ -91,31 +51,20 @@
 
     <p>
         Please indicate clearly your last name, and your reference
-        code like this: {{reg.surname}}, ECS3_{{reg.code}}.
+        code like this: {{reg.surname}}, {{reg.code}}.
     </p>
 
-   <p>Confirmation of your attendance for the ECS3 will be sent in an e-mail message
-    after your registration fee has been received. You will also receive an
-    additional e-mail with the invoice for payment of the accommodation option you
-    have chosen in Registration form.
+   <p>Confirmation of your attendance for the HTCC2017 will be sent in an e-mail message after your registration fee has been received. You will also receive an additional e-mail with the invoice from the hotel for payment of the accommodation option you have chosen in Registration form.
     </p>
 
-{% else %}
-    <p>It is our great pleasure to inform you that you have successfully registered for the participation at the ECS3.</p>
-    <p>Your reference code for ECS3 is:<span style="color:red;font-weight:bold;">ECS3_{{reg.code}}<span></p>
-    <p>Your status is:<span style="color:red;font-weight:bold;">{{reg.get_status_display}}<span></p>
-    <p>The Organising committee will arrange and cover the expanses of your accommodation on half-board basis in the <a href="http://www.hotelelaphusabrac.com/en/">Bluesun Hotel Elaphusa (4****)</a>. Please note that unfortunately we are not able to cover your travel expanses.<p>
-    <p>We are looking forward to meeting you in Bol.<p>
-{% endif %}
-
-    <p>Should you have any questions please do not hesitate to <a href="mailto:ecs3@ecs3croatia.org">contact us</a>.<br>
+    <p>Should you have any questions please do not hesitate to <a href="mailto:htcc2017@hrvatska-udruga-kristalografa.hr">contact us</a>.<br>
        With best regards,<br>
-       Organising committee of the ECS3<br>
+       Organising committee of the HTCC2017<br>
     </p>
     </td>
 
     <td>
-        <a href="http://ecs3.ecanews.org/"><img height="200" width="300" src="http://ecs3.ecanews.org/ECS3/ecs3.png"></a>
+     <a href="http://www.htcc2017.org"><img height="200" width="300" src="https://static.wixstatic.com/media/3f76f8_0f4afc3f875a44259f1efc1e3a787491~mv2.jpg/v1/fill/w_312,h_144,al_c,q_80,usm_0.66_1.00_0.01/3f76f8_0f4afc3f875a44259f1efc1e3a787491~mv2.jpg"></a>
     </td>
 </tr>
 </table>
