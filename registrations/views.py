@@ -10,7 +10,7 @@ from .models import Registration
 
 
 SENDER = 'htcc2017@hrvatska-udruga-kristalografa.hr'
-#HOTEL_EMAIL = SENDER
+HOTEL_EMAIL = "Lana.RadolovicJakus@valamar.com"
 
 class RegistrationCreate(CreateView):
     model = Registration
@@ -68,7 +68,8 @@ def registration_paid(request,pk):
     reg.paid = True
     reg.save()
     paid_email_user(reg)
-    paid_email_hotel(reg)
+    paid_email_hotel(reg,HOTEL_EMAIL)
+    paid_email_hotel(reg,SENDER)
     messages.add_message(request, messages.SUCCESS, 'Email was sent to: %s and to the hotel!.' % reg.email)
     return redirect('registration_list')
 
@@ -95,14 +96,14 @@ def paid_email_user(reg):
     msg.send()
     print "Email sent to: %s" %reg.email
 
-def paid_email_hotel(reg):
+def paid_email_hotel(reg,email):
     """ Send an email to hotel with the data needed for the accommodation"""
 
-    subject = 'Registration ECS3_%s is paid' % reg.code
+    subject = 'Registration at HTCC2017 n. %s is paid' % reg.code
     from_email = SENDER
     text_content = render_to_string('emails/paid_email_hotel.txt', {"reg":reg})
     html_content = render_to_string('emails/paid_email_hotel.html', {"reg":reg})
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [HOTEL_EMAIL])
+    msg = EmailMultiAlternatives(subject, text_content, from_email, [email])
     msg.attach_alternative(html_content, "text/html")
     msg.send()
     print "Email sent to: %s" %reg.email
