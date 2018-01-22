@@ -9,14 +9,14 @@ from .forms import RegistrationForm
 from .models import Registration
 
 
-SENDER = 'htcc2017@hrvatska-udruga-kristalografa.hr'
+SENDER = 'registration@htcc2018.org'
 HOTEL_EMAIL = "Lana.RadolovicJakus@valamar.com"
 
 class RegistrationCreate(CreateView):
     model = Registration
     form_class = RegistrationForm
     template_name = "register.html"
-    success_url = "/registration/thanks/"
+    success_url = "/registration/register/thanks/"
 
     def form_valid(self, form):
         form.send_email()

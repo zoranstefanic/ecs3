@@ -21,6 +21,10 @@ HOTELCHOICES = ((1, '3***'),
 ROOMCHOICES = ((1, 'shared double room'),
                  (2, 'double room single use'),
                  )
+EXPERTISE_CHOICES = ((1, 'biginner'),
+                 (2, 'intermediate'),
+                 (3, 'advanced'),
+                 )
 
 def generate_code():
     "This has to insure to pick a unique number from remaining"
@@ -41,7 +45,7 @@ class Registration(models.Model):
     address = models.CharField(max_length=100)
 
     #module = models.IntegerField(choices=MODULECHOICES)
-    status = models.IntegerField(choices=STATUSCHOICES, verbose_name="Status at HTCC2017")
+    status = models.IntegerField(choices=STATUSCHOICES, verbose_name="Status at HTCC2018")
     #Bursaries
     bursary  = models.BooleanField(default=False, help_text="I would like to apply for bursary")
     cv = models.FileField(upload_to="bursaries",
@@ -61,16 +65,24 @@ class Registration(models.Model):
     hotel_category = models.IntegerField(choices=HOTELCHOICES, default=1)
     room_choice = models.IntegerField(choices=ROOMCHOICES, default=1)
     room_preference = models.CharField(max_length=50, verbose_name="I would like to share the room with", null=True, blank=True)
-    arrival     = models.DateField(verbose_name="Date of arrival", default="2017-04-22")
-    departure   = models.DateField(verbose_name="Date of departure", default="2017-04-26")
-
-    #lunch  = models.BooleanField(default=False, help_text="By checking this option you add lunch for the whole stay (EUR 10)")
-    #dinner  = models.BooleanField(default=False, help_text="By checking this option you add dinner for the whole stay (EUR 10)")
+    arrival     = models.DateField(verbose_name="Date of arrival", default="2018-09-23")
+    departure   = models.DateField(verbose_name="Date of departure", default="2018-09-27")
 
     accepted = models.BooleanField(default=False, editable=False)
     created = models.DateTimeField(auto_now_add=True,editable=False)
     paid = models.BooleanField(default=False, editable=False)
     code = models.PositiveSmallIntegerField(editable=False, default = generate_code)
+
+    topic1_expertise = models.IntegerField(choices=EXPERTISE_CHOICES,
+                                          help_text="How would your rate your expertise in Hot topic 1: Extreme conditions",     
+                                          default=1)
+    topic2_expertise = models.IntegerField(choices=EXPERTISE_CHOICES,
+                                          help_text="How would your rate your expertise in Hot topic 2: Total scattering and PDF analysis of complex materials"      ,
+                                          default=1)
+    topic3_expertise = models.IntegerField(choices=EXPERTISE_CHOICES,
+                                          help_text="How would your rate your expertise in Hot topic 3: Dynamical crystallography",
+                                           default=1)
+    
     
     def __unicode__(self):
        return '%s %s' % (self.name, self.surname)
