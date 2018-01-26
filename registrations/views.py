@@ -10,7 +10,7 @@ from .models import Registration
 
 
 SENDER = 'registration@htcc2018.org'
-HOTEL_EMAIL = "Lana.RadolovicJakus@valamar.com"
+HOTEL_EMAILS = ['valentina.zarkovic@bluesunhotels.com','antonija.brlek@bluesunhotels.com']
 
 class RegistrationCreate(CreateView):
     model = Registration
@@ -41,7 +41,7 @@ class RegistrationUpdate(UpdateView):
     model = Registration
     form_class = RegistrationForm
     template_name = 'registration_update.html'
-    success_url = "/registration/list/"
+    success_url = "/registration/register/list/"
 
 @login_required
 def registration_accept(request,pk):
@@ -68,14 +68,13 @@ def registration_paid(request,pk):
     reg.paid = True
     reg.save()
     paid_email_user(reg)
-    paid_email_hotel(reg,HOTEL_EMAIL)
-    paid_email_hotel(reg,SENDER)
+    paid_email_hotel(reg,HOTEL_EMAILS)
+    paid_email_hotel(reg,[SENDER])
     messages.add_message(request, messages.SUCCESS, 'Email was sent to: %s and to the hotel!.' % reg.email)
     return redirect('registration_list')
 
-
 def send_accept_email(reg):
-    subject = 'Hot topics in contemporary crystallography 2017 acceptance'
+    subject = 'Hot topics in contemporary crystallography 2018 acceptance'
     from_email = SENDER
     text_content = render_to_string('emails/accept_email.txt', {"reg":reg})
     html_content = render_to_string('emails/accept_email.html', {"reg":reg})
@@ -87,7 +86,7 @@ def send_accept_email(reg):
 def paid_email_user(reg):
     """ Send an email to user confirming her/his payment """
 
-    subject = 'Registration for HTCC2017 number %s is paid' % reg.code
+    subject = 'Registration for HTCC2018 number %s is paid' % reg.code
     from_email = SENDER
     text_content = render_to_string('emails/paid_email_user.txt', {"reg":reg})
     html_content = render_to_string('emails/paid_email_user.html', {"reg":reg})
@@ -96,14 +95,14 @@ def paid_email_user(reg):
     msg.send()
     print "Email sent to: %s" %reg.email
 
-def paid_email_hotel(reg,email):
+def paid_email_hotel(reg,emails):
     """ Send an email to hotel with the data needed for the accommodation"""
 
-    subject = 'Registration at HTCC2017 n. %s is paid' % reg.code
+    subject = 'Registration at HTCC2018 n. %s is paid' % reg.code
     from_email = SENDER
     text_content = render_to_string('emails/paid_email_hotel.txt', {"reg":reg})
     html_content = render_to_string('emails/paid_email_hotel.html', {"reg":reg})
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [email])
+    msg = EmailMultiAlternatives(subject, text_content, from_email, emails)
     msg.attach_alternative(html_content, "text/html")
     msg.send()
-    print "Email sent to: %s" %reg.email
+    print "Email sent to: %s" % emails

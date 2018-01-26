@@ -1,65 +1,47 @@
 Dear {{reg.get_title_display}} {{reg.name}} {{reg.surname}},
 
 It is our great pleasure to inform you that your application for the
-participation at HTCC2017 has been accepted.
+participation at HTCC2018 has been accepted!
 
-Your reference code for HTCC2017 is: {{reg.code}}
+Your reference code for HTCC2018 is: {{reg.code}}
 
 Your status is: {{reg.get_status_display}}
 
 Please proceed with your registration fee payment (if applicable, _i.e._
 according to your status). Deadline for payment of the early bird registration
-fee is Jan. 31st, 2017.
+fee is Jun 17th, 2018.
 
 IMPORTANT: if you have applied for bursary please DO NOT make any payments
-until you receive an e-mail from Bursary committee on Jan. 15th, 2017.
+until you receive an e-mail from Bursary committee on Apr. 27th, 2018.
 
-To process your payment, use the following data:
+To process your payment, use the following data:  
 
 * * *
 
-Account holder name:
-
-Hrvatska udruga kristalografa, Bijenička 54, 10000 Zagreb, Hrvatska
-
-VAT:
-
-HR47378791658
-
-Bank:
-
-Erste & Steiermärkische bank dd
-
-Branch Address:
-
-Jadranski trg 3a, 51000 Rijeka, Hrvatska
-
-IBAN:
-
-HR1524020061100637321
-
-SWIFT/BIC:
-
-ESBCHR22
-
+| Account holder name: | Hrvatska udruga kristalografa, Bijenička 54, 10000
+Zagreb, Hrvatska  
+---|---  
+VAT: | HR47378791658  
+Bank: | Erste & Steiermärkische bank dd  
+Branch Address: | Jadranski trg 3a, 51000 Rijeka, Hrvatska  
+IBAN: | HR1524020061100637321  
+SWIFT/BIC: | ESBCHR22  
+  
 * * *
 
 Please indicate clearly your last name, and your reference code like this:
 {{reg.surname}}, {{reg.code}}.
 
-Confirmation of your attendance for the HTCC2017 will be sent in an e-mail
+Confirmation of your attendance for the HTCC2018 will be sent in an e-mail
 message after your registration fee has been received. You will also receive
-an additional e-mail with the invoice from the hotel for payment of the
+an additional e-mail with the invoice from the hotel for the payment of the
 accommodation option you have chosen in Registration form.
 
 Should you have any questions please do not hesitate to [contact
-us](mailto:htcc2017@hrvatska-udruga-kristalografa.hr).
+us](mailto:registration@htcc2018.org).  
+With best regards,  
+Organising committee of the HTCC2018  
 
-With best regards,
-
-Organising committee of the HTCC2017
-
-[![](https://static.wixstatic.com/media/3f76f8_0f4afc3f875a44259f1efc1e3a78749
-1~mv2.jpg/v1/fill/w_312,h_144,al_c,q_80,usm_0.66_1.00_0.01/3f76f8_0f4afc3f875a
-44259f1efc1e3a787491~mv2.jpg)](http://www.htcc2017.org)
+[![](http://htcc2018.org/wp-
+content/uploads/2017/11/logo.jpg)](http://htcc2018.org)
 

@@ -1,64 +1,23 @@
 This is an automatically generated email stating that the following
 registration for the [Hot Topics in Contemporary Crystallography
-2017](http://www.htcc2017.org) is paid in full. Please use the following
+2018](http://htcc2018.org) is paid in full. Please use the following
 information to book the accommodation for the participant and to send the
 invoice to the following e-mail address: [{{reg.email}}](mailto:{{reg.email}})
-
-Registration code
-
-{{reg.code}}
-
-Name
-
-{{reg.get_title_display}} {{reg.name}} {{reg.surname}}
-
-Email
-
-{{reg.email}}
-
-Date of birth
-
-{{reg.date_of_birth}}
-
-Affiliation
-
-{{reg.affiliation}}
-
-Address
-
-{{reg.address}}
-
-Status at HTCC2017
-
-{{reg.get_status_display}}
-
-Registration date and time
-
-{{reg.created}}
-
-Hotel category
-
-{{reg.get_hotel_category_display}}
-
-Room choice
-
-{{reg.get_room_choice_display}}
-
-Room preference
-
-Would like to share the room with: {{reg.room_preference}}
-
-Arrival
-
-{{reg.arrival}}
-
-Departure
-
-{{reg.departure}}
-
-Registration paid:
-
-{{reg.paid|yesno:"Yes,No"}}
-
-(http://www.htcc2017.org)
+| Registration code | {{reg.code}}  
+---|---  
+Name | {{reg.get_title_display}} {{reg.name}} {{reg.surname}}  
+Email | {{reg.email}}  
+Date of birth | {{reg.date_of_birth}}  
+Affiliation | {{reg.affiliation}}  
+Address | {{reg.address}}  
+Status at HTCC2018 | {{reg.get_status_display}}  
+Registration date and time | {{reg.created}}  
+Hotel category | {{reg.get_hotel_category_display}}  
+Room choice | {{reg.get_room_choice_display}}  
+Room preference | Would like to share the room with: {{reg.room_preference}}  
+Arrival | {{reg.arrival}}  
+Departure | {{reg.departure}}  
+Registration paid: | {{reg.paid|yesno:"Yes,No"}}  
+[![](http://htcc2018.org/wp-
+content/uploads/2017/11/logo.jpg)](http://www.htcc2018.org)
 

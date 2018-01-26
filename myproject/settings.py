@@ -109,7 +109,7 @@ STATIC_URL = '/static/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/registration/media/'
 
 LOGIN_URL = "/registration/account/login/"
 FORCE_SCRIPT_NAME = "/registration/"

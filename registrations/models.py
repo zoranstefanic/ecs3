@@ -21,7 +21,7 @@ HOTELCHOICES = ((1, '3***'),
 ROOMCHOICES = ((1, 'shared double room'),
                  (2, 'double room single use'),
                  )
-EXPERTISE_CHOICES = ((1, 'biginner'),
+EXPERTISE_CHOICES = ((1, 'beginner'),
                  (2, 'intermediate'),
                  (3, 'advanced'),
                  )
@@ -73,13 +73,16 @@ class Registration(models.Model):
     paid = models.BooleanField(default=False, editable=False)
     code = models.PositiveSmallIntegerField(editable=False, default = generate_code)
 
-    topic1_expertise = models.IntegerField(choices=EXPERTISE_CHOICES,
+    topic1_expertise = models.IntegerField(verbose_name="Hot topic 1 (Extreme conditions) expertise",
+                                          choices=EXPERTISE_CHOICES,
                                           help_text="How would your rate your expertise in Hot topic 1: Extreme conditions",     
                                           default=1)
-    topic2_expertise = models.IntegerField(choices=EXPERTISE_CHOICES,
+    topic2_expertise = models.IntegerField(verbose_name="Hot topic 2 (Total scattering and PDF analysis of complex materials) expertise",
+                                          choices=EXPERTISE_CHOICES,
                                           help_text="How would your rate your expertise in Hot topic 2: Total scattering and PDF analysis of complex materials"      ,
                                           default=1)
-    topic3_expertise = models.IntegerField(choices=EXPERTISE_CHOICES,
+    topic3_expertise = models.IntegerField(verbose_name="Hot topic 3 (Dynamical crystallography) expertise",
+                                          choices=EXPERTISE_CHOICES,
                                           help_text="How would your rate your expertise in Hot topic 3: Dynamical crystallography",
                                            default=1)
     
@@ -89,3 +92,4 @@ class Registration(models.Model):
 
     class Meta:
         ordering = ['-created']
+
